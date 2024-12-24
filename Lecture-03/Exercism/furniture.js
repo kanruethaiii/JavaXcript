@@ -1,3 +1,8 @@
-for (let char of "test") {
-    console.log(char);
-}
+let furniture = ['Table', 'Chairs', 'Couch'];
+
+furniture.forEach(item => {
+  console.log(`Letters in "${item}":`);
+  for (let letter of item) {
+    console.log(letter);
+  }
+});
