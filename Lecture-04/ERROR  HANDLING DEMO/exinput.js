@@ -1,0 +1,30 @@
+// Program to calculate BMI
+// BMI = weight (kg) / (height (m) * height (m))
+
+const rl = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Prompt user for name, weight, and height
+rl.question('Enter your name: ', (name) => {
+    rl.question('Enter your weight (in kg): ', (weightInput) => {
+        rl.question('Enter your height (in m): ', (heightInput) => {
+            // Convert inputs to numbers
+            let weight = parseFloat(weightInput);
+            let height = parseFloat(heightInput);
+
+            if (isNaN(weight) || isNaN(height) || height <= 0) {
+                console.log('Invalid input! Please enter valid numbers for weight and height.');
+            } else {
+                // Calculate BMI
+                let bmi = weight / (height * height);
+
+                // Display the result in 2 decimal places
+                console.log(`${name}, your BMI is ${bmi.toFixed(2)}`);
+            }
+
+            rl.close();
+        });
+    });
+});
